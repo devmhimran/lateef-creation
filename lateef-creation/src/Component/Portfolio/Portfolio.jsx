@@ -15,6 +15,7 @@ const Portfolio = () => {
                 category={'website-uiux'}
                 titleEx={'design'}
                 data={portfolio}
+                home={'home'}
                 textAlign={'text-start'}
                 >
             </PortfolioItem>
@@ -23,7 +24,17 @@ const Portfolio = () => {
                 category={'app-uiux'}
                 titleEx={'design'}
                 data={portfolio}
+                home={'home'}
                 textAlign={'text-end'}
+                >
+            </PortfolioItem>
+            <PortfolioItem
+                title={'Creative LOGO'}
+                category={'creative-logo-design'}
+                titleEx={'design'}
+                data={portfolio}
+                home={'home'}
+                textAlign={'text-start'}
                 >
             </PortfolioItem>
         </div>
