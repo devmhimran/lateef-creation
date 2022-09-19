@@ -1,0 +1,38 @@
+[
+    {
+      "id": "1",
+      "name": "Safety Service 1",
+      "description": "A tool Manufacturing website, based on e-commerce ",
+      "thumbnail": "https://i.ibb.co/tqKTnnZ/preview-image-one.png",
+      "previewImage": [
+        "https://i.ibb.co/thZ76F4/preview-1.png",
+        "https://i.ibb.co/TPjFWzH/preview-2.png",
+        "https://i.ibb.co/0XBgLvc/preview-1.png"
+      ],
+      "category": "website-uiux"
+    },
+    {
+        "id": "2",
+        "name": "Safety Service 2",
+        "description": "Have a project in mind? would you like to share it? feel free to reach out by writing an e-mail Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "thumbnail": "https://i.ibb.co/JsmrWQf/Talent-Preview-1-1.png",
+        "previewImage": [
+          "https://i.ibb.co/thZ76F4/preview-1.png",
+          "https://i.ibb.co/TPjFWzH/preview-2.png",
+          "https://i.ibb.co/0XBgLvc/preview-1.png"
+        ],
+        "category": "website-uiux"
+      },
+    {
+        "id": "3",
+        "name": "Safety Service 3",
+        "description": "A tool Manufacturing website, based on e-commerce ",
+        "thumbnail": "https://i.ibb.co/SnmCrZ0/preview-image-two.png",
+        "previewImage": [
+          "https://i.ibb.co/thZ76F4/preview-1.png",
+          "https://i.ibb.co/TPjFWzH/preview-2.png",
+          "https://i.ibb.co/0XBgLvc/preview-1.png"
+        ],
+        "category": "website-uiux"
+      }
+]

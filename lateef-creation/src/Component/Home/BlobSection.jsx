@@ -6,7 +6,7 @@ import { RiPieChart2Line } from 'react-icons/ri';
 
 const BlobSection = () => {
     return (
-        <div className='blob__main py-16 lg:py-28 mx-3 lg:mx-0'>
+        <div className='blob__main py-16 lg:py-20 mx-3 lg:mx-0'>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
                 <div className="blob__card border border-[#3E3E3E] py-20 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:-translate-y-5">
                     <CgWebsite className='text-white text-6xl mx-auto'></CgWebsite>
