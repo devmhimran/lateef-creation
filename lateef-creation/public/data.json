@@ -106,5 +106,13 @@
       "https://i.ibb.co/0XBgLvc/preview-1.png"
     ],
     "category": "app-uiux"
+  },
+  {
+    "id": "10",
+    "name": "insta",
+    "description": "A tool Manufacturing website, based on e-commerce ",
+    "thumbnail": "https://raw.githubusercontent.com/devmhimran/dummy-api/main/Devmhimran-Api/Devmhimran-image/devmhimran-mobopedia.jpg",
+    "link": "https://youtu.be/FCWnqIcb3BE",
+    "category": "instagram-post"
   }
 ]

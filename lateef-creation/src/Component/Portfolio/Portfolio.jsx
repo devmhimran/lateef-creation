@@ -37,6 +37,15 @@ const Portfolio = () => {
                 textAlign={'text-start'}
                 >
             </PortfolioItem>
+            <PortfolioItem
+                title={'Latest Instagram'}
+                category={'instagram-post'}
+                titleEx={'post'}
+                data={portfolio}
+                home={'home'}
+                textAlign={'text-end'}
+                >
+            </PortfolioItem>
         </div>
     );
 };
