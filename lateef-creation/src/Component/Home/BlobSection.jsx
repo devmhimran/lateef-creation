@@ -8,19 +8,19 @@ const BlobSection = () => {
     return (
         <div className='blob__main py-16 lg:py-28 mx-3 lg:mx-0'>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-                <div className="blob__card border border-[#3E3E3E] py-20 px-4">
+                <div className="blob__card border border-[#3E3E3E] py-20 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:scale-110">
                     <CgWebsite className='text-white text-6xl mx-auto'></CgWebsite>
                     <p className='text-lg text-white text-center mt-3'>WEBSITE UI/UX DESIGN</p>
                 </div>
-                <div className="blob__card border border-[#3E3E3E] py-20 px-4">
+                <div className="blob__card border border-[#3E3E3E] py-20 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:scale-110">
                     <AiFillMobile className='text-white text-6xl mx-auto'></AiFillMobile>
                     <p className='text-lg text-white text-center mt-3'>APP UI/UX DESIGN</p>
                 </div>
-                <div className="blob__card border border-[#3E3E3E] py-20 px-4">
+                <div className="blob__card border border-[#3E3E3E] py-20 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:scale-110">
                     <SiMaterialdesign className='text-white text-6xl mx-auto'></SiMaterialdesign>
                     <p className='text-lg text-white text-center mt-3'>LOGO DESIGN</p>
                 </div>
-                <div className="blob__card border border-[#3E3E3E] py-20 px-4">
+                <div className="blob__card border border-[#3E3E3E] py-20 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:scale-110">
                     <RiPieChart2Line className='text-white text-6xl mx-auto'></RiPieChart2Line>
                     <p className='text-lg text-white text-center mt-3'>ILLUSTRATION DESIGN</p>
                 </div>
