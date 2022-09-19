@@ -28,6 +28,7 @@ body {
     box-shadow: 0px 30px 30px -20px #000000;
     transition: 0.3s ease-in-out;
 }
-.hero__title{
+.hero__title, 
+.single__portfolio__detail p{
     font-family: 'Inter', sans-serif;
 }

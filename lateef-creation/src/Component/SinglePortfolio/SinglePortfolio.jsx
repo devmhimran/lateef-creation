@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import SinglePortfolioDetail from '../SinglePortfolioDetail/SinglePortfolioDetail';
 
 const SinglePortfolio = () => {
 
@@ -10,25 +11,17 @@ const SinglePortfolio = () => {
         fetch('/public/data.json')
         .then(res => res.json())
         .then(data => setPortfolio(data))
-    },[])
-
-    console.log(id)
-    
+    },[]);
 
     const portfolioDetail = portfolio.find(data => data.id === id);
-
-    // console.log(portfolioDetail)
 
     if(portfolioDetail){
         portfolioSave.push(portfolioDetail)
     }
-    console.log(portfolioSave)
-
     return (
-        <div>
-            <h1>{id}</h1>
+        <div className='single__portfolio__data py-16 lg:py-36 mx-3 lg:mx-0'>
             {
-                portfolioSave.map(portfolioDetail => console.log(portfolioDetail))
+                portfolioSave.map(portfolioDetail => <SinglePortfolioDetail key={portfolioDetail.id} portfolioDetail={portfolioDetail}></SinglePortfolioDetail>)
             }
         </div>
     );
