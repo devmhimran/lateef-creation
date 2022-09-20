@@ -10,9 +10,6 @@ const PortfolioItems = ({ portfolioItem, home }) => {
         }else{
             navigate(`/portfolio/${designId}`)
         }
-        
-
-        
     }
     return (
         <div className={`portfolio__items ${home ? "odd:brightness-50" : ""} hover:brightness-100 ease-in-out duration-500`}>

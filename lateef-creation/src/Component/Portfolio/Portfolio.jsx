@@ -39,11 +39,20 @@ const Portfolio = () => {
             </PortfolioItem>
             <PortfolioItem
                 title={'Latest Instagram'}
-                category={'instagram-post'}
+                category={'latest-instagram-post'}
                 titleEx={'post'}
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-end'}
+                >
+            </PortfolioItem>
+            <PortfolioItem
+                title={'learning Video'}
+                category={'learning-video-tutorial'}
+                titleEx={'tutorial'}
+                data={portfolio}
+                home={'home'}
+                textAlign={'learning-video-tutorial'}
                 >
             </PortfolioItem>
         </div>
