@@ -6,6 +6,7 @@ import Home from './Component/Home/Home'
 import NavMenu from './Component/NavMenu/NavMenu'
 import SinglePortfolio from './Component/SinglePortfolio/SinglePortfolio'
 import Category from './Component/Category/Category'
+import Footer from './Component/Footer/Footer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,6 +18,7 @@ function App() {
         <Route path="/portfolio/:id" element={<SinglePortfolio />} />
         <Route path="/category/:categoryName" element={<Category/>} />
       </Routes>
+      <Footer></Footer>
     </div>
   )
 }
