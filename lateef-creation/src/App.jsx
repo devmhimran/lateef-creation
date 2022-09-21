@@ -8,6 +8,7 @@ import SinglePortfolio from './Component/SinglePortfolio/SinglePortfolio'
 import Category from './Component/Category/Category'
 import Footer from './Component/Footer/Footer'
 import Dashboard from './Component/Dashboard/Dashboard'
+import New from './Component/New/New'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
         <Route path="/portfolio/:id" element={<SinglePortfolio />} />
         <Route path="/category/:categoryName" element={<Category/>} />
         <Route path="/lateef-creation-dashboard" element={<Dashboard/>} />
+        <Route path="/new" element={<New></New>} />
       </Routes>
       <Footer></Footer>
     </div>

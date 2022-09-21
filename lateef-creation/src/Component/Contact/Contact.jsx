@@ -7,7 +7,7 @@ const Contact = () => {
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_tdxeipq', 'template_9do5abh', form.current, 'NBm1Am8HA6NeOIEUY')
+        emailjs.sendForm('service_to4emq9', 'template_bdceq8d', form.current, 'xWWMZGsAy02ckLYDn')
             .then((result) => {
                 console.log(result.text);
                 toast.success('Successfully Send!')
@@ -22,11 +22,11 @@ const Contact = () => {
             <form className='mt-14' ref={form} onSubmit={sendEmail}>
                 <div className="contact__form__main">
                     <div className="input__field block lg:flex justify-between py-0 lg:py-4">
-                        <input className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' type="text" name="user_name" placeholder="What's your name?" />
-                        <input className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' type="text" name="user_email" placeholder="What's your email address?" />
+                        <input className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' type="text" name="user_name" placeholder="What's your name?"  required/>
+                        <input className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' type="text" name="user_email" placeholder="What's your email address?"  required/>
                     </div>
                     <div className="input__field block lg:flex justify-between py-0 lg:py-4">
-                        <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_interest" >
+                        <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_interest"  required>
                             <option value="">What are you interested in?</option>
                             <option value="Need help with a one-off project">Need help with a one-off project</option>
                             <option value="Need Website UIUX Design">Need Website UIUX Design</option>
@@ -38,7 +38,7 @@ const Contact = () => {
                             <option value="Just wanted to say Hi!">Just wanted to say Hi!</option>
                         </select>
 
-                        <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_budget" >
+                        <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_budget" required>
                             <option>What's your budget?</option>
                             <option value="$100-$500">$100-$500</option>
                             <option value="$500-$1000">$500-$1000</option>
@@ -48,7 +48,7 @@ const Contact = () => {
                         </select>
                     </div>
                     <div className="input__field justify-between py-4">
-                        <textarea className='text-white text-base lg:text-xl placeholder:text-white w-full p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_message" placeholder="What's your message?"></textarea>
+                        <textarea className='text-white text-base lg:text-xl placeholder:text-white w-full p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_message" placeholder="What's your message?"  required></textarea>
                     </div>
                     <div className="input__field justify-between py-4">
                         <button className='contact__send bg-white text-black p-4 lg:p-5 capitalize flex items-center font-bold text-base mx-auto'> <span className='text-2xl mr-2'><FaTelegramPlane></FaTelegramPlane></span> send message</button>

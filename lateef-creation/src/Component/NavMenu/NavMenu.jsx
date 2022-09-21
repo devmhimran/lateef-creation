@@ -7,7 +7,6 @@ import { HiX } from 'react-icons/hi';
 
 const NavMenu = () => {
     const [open, setOpen] = useState(false);
-    console.log(open)
     return (
         <div className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
