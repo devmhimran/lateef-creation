@@ -19,7 +19,6 @@ body {
     font-family: 'Krona One', sans-serif;
     background-color: #1F1F1F;
 }
-
 .menu__text {
     font-family: 'Montserrat', sans-serif;
 }
@@ -37,4 +36,7 @@ body {
 }
 .social__icon:hover .icon{
     color: #000;
+}
+title{
+    text-transform: capitalize;
 }

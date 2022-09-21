@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import PageTitle from '../PageTitle/PageTitle';
 import PortfolioItems from '../PortfolioItems/PortfolioItems';
 
 const Category = () => {
@@ -13,6 +14,7 @@ const Category = () => {
     }, []);
     return (
         <div className='category__main container mx-auto max-w-screen-xl py-20 lg:py-32'>
+            <PageTitle title={categoryNameMain}></PageTitle>
             <div className="category__content mx-3 lg:mx-0">
                 <h1 className='text-white text-3xl lg:text-5xl text-center uppercase'>{categoryNameMain}</h1>
                 <div className="category__portfolio mt-8 lg:mt-16">

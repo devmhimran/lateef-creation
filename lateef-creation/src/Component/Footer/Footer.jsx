@@ -4,10 +4,11 @@ import { SiDribbble } from 'react-icons/si';
 import { RiInstagramFill } from 'react-icons/ri';
 import { FaFacebookF, FaYoutube } from 'react-icons/fa';
 import lateefCreationLogo from '../../assets/lateef-creation-logo.png'
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className='footer__main bg-black py-6'>
+        <footer className='footer__main bg-black py-6 w-full'>
             <div className="container container mx-auto max-w-screen-xl block lg:flex justify-between items-center">
                 <div className="footer__social lg:justify-start justify-center flex">
                     <a className='leading-none mr-2' href="#">
@@ -43,7 +44,9 @@ const Footer = () => {
                 </div>
                 <div className="footer__detail lg:flex block items-center">
                     <p className='text-white copyright__text lg:text-end text-center text-sm lg:text-base mr-0 lg:mr-8 lg:my-0 my-4'>Copyright © 2022 | All rights reserved</p>
-                    <img className='w-32 lg:w-40 mx-auto' src={lateefCreationLogo} alt="" />
+                    <Link to="/">
+                        <img className='w-32 lg:w-40 mx-auto' src={lateefCreationLogo} alt="" />
+                    </Link>
                 </div>
             </div>
         </footer>
