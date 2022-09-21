@@ -6,7 +6,7 @@ import './NavMenu.css'
 
 const NavMenu = () => {
     return (
-        <div className='navmenu__main pt-8 lg:mx-0 mx-3'>
+        <div className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
                 <div className="logo">
                     <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="" /></Link>
@@ -18,6 +18,9 @@ const NavMenu = () => {
                         <p className='text-end tracking-[.6em] mr-[-10px] font-semibold'>Menu</p>
                     </button>
                 </div>
+            </div>
+            <div className="dropdown__menu">
+
             </div>
         </div>
     );
