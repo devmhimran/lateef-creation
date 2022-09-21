@@ -114,5 +114,17 @@
     "thumbnail": "https://raw.githubusercontent.com/devmhimran/dummy-api/main/Devmhimran-Api/Devmhimran-image/devmhimran-mobopedia.jpg",
     "link": "https://youtu.be/FCWnqIcb3BE",
     "category": "latest-instagram-post"
+  },
+  {
+    "id": "11",
+    "name": "APP Ui ux new uplaod",
+    "description": "A tool Manufacturing website, based on e-commerce new upload",
+    "thumbnail": "https://raw.githubusercontent.com/devmhimran/dummy-api/main/dummy%20img/1.jpg",
+    "previewImage": [
+      "https://raw.githubusercontent.com/devmhimran/dummy-api/main/Devmhimran-Api/Devmhimran-image/devmhimran-country-info.png",
+      "https://i.ibb.co/0XBgLvc/preview-1.png",
+      "https://raw.githubusercontent.com/devmhimran/dummy-api/main/Devmhimran-Api/Devmhimran-image/devmhimran-country-info.png"
+    ],
+    "category": "app-uiux"
   }
 ]
