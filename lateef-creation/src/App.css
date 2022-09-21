@@ -42,7 +42,9 @@ body {
 
 .hero__title,
 .single__portfolio__detail p,
-.copyright__text {
+.copyright__text,
+.contact__send
+{
     font-family: 'Inter', sans-serif;
 }
 

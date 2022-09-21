@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PortfolioItems = ({ portfolioItem, home }) => {
-    const { thumbnail,id, link } = portfolioItem;
+    const { thumbnail,id, link, name } = portfolioItem;
     const navigate = useNavigate();
     const navigateId = (designId, postLink) =>{
         if(postLink){
@@ -14,7 +14,7 @@ const PortfolioItems = ({ portfolioItem, home }) => {
     return (
         <div className={`portfolio__items ${home ? "odd:brightness-50" : ""} hover:brightness-100 ease-in-out duration-500`}>
             <div className='cursor-pointer' onClick={()=> navigateId(id, link)}>
-                <img className='preview__image ease-in-out duration-500' src={thumbnail} alt="" />
+                <img className='preview__image ease-in-out duration-500' src={thumbnail} alt={name} />
             </div>
         </div>
     );

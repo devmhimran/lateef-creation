@@ -14,7 +14,7 @@ const SinglePortfolioDetail = ({ portfolioDetail }) => {
                 {
                     previewImage.map((imageData, index) =>
                         <div key={index}>
-                            <img className='w-10/12 mx-auto' src={imageData} alt="" />
+                            <img className='w-full mx-auto' src={imageData} alt={name} />
                             <div className='my-3 w-10/12 mx-auto'>
                                 <hr className='border-gray-600' />
                             </div>

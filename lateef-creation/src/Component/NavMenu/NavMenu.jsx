@@ -12,7 +12,7 @@ const NavMenu = () => {
         <div className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
                 <div className="logo">
-                    <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="" /></Link>
+                    <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="Lateef Creation Logo" /></Link>
                 </div>
                 <div className="menu flex items-center">
                     <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><a href="mailto:lateefshuvro@gmail.com">Hire me</a></button>

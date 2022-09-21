@@ -50,7 +50,7 @@ const Footer = () => {
                 <div className="footer__detail lg:flex block items-center">
                     <p className='text-white copyright__text lg:text-end text-center text-sm lg:text-base mr-0 lg:mr-8 lg:my-0 my-4'>Copyright © 2022 | All rights reserved</p>
                     <Link to="/">
-                        <img className='w-32 lg:w-40 mx-auto' src={lateefCreationLogo} alt="" />
+                        <img className='w-32 lg:w-40 mx-auto' src={lateefCreationLogo} alt="Lateef Creation Logo" />
                     </Link>
                 </div>
             </div>

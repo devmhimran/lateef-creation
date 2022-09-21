@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from '../Contact/Contact';
 import PageTitle from '../PageTitle/PageTitle';
 import Portfolio from '../Portfolio/Portfolio';
 import BlobSection from './BlobSection';
@@ -11,6 +12,7 @@ const Home = () => {
             <Hero></Hero>
             <BlobSection></BlobSection>
             <Portfolio></Portfolio>
+            <Contact></Contact>
         </div>
     );
 };

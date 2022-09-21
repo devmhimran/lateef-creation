@@ -15,7 +15,7 @@ const Hero = () => {
                 </div>
                 <div className="hero__main__right mt-10 lg:mt0 w-full lg:w-2/5">
                     <div className="hero__image">
-                        <img className='w-full md:w-4/6 lg:w-11/12 mx-auto lg:ml-auto' src={heroImage} alt="" />
+                        <img className='w-full md:w-4/6 lg:w-11/12 mx-auto lg:ml-auto' src={heroImage} alt="Lateef Creation Hero Image" />
                     </div>
                 </div>
             </div>
