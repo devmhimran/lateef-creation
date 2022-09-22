@@ -2,7 +2,7 @@ import React from 'react';
 import PageTitle from '../PageTitle/PageTitle';
 
 const SinglePortfolioDetail = ({ portfolioDetail }) => {
-    const { name, description, thumbnail, previewImage, category } = portfolioDetail;
+    const { name, description, thumbnail, previewInputData, category } = portfolioDetail;
     return (
         <div className="container mx-auto max-w-screen-xl text-center">
             <PageTitle title={name}></PageTitle>
@@ -12,9 +12,9 @@ const SinglePortfolioDetail = ({ portfolioDetail }) => {
             </div>
             <div className="single__portfolio__preview__image mt-11">
                 {
-                    previewImage.map((imageData, index) =>
+                    previewInputData.map((imageData, index) =>
                         <div key={index}>
-                            <img className='w-full mx-auto' src={imageData} alt={name} />
+                            <img className='w-full mx-auto' src={imageData.previewImage} alt={name} />
                             <div className='my-3 w-10/12 mx-auto'>
                                 <hr className='border-gray-600' />
                             </div>

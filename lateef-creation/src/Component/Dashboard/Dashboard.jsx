@@ -26,9 +26,24 @@ const Dashboard = () => {
         const thumbnail = e.target.thumbnail.value;
         const category = e.target.category.value;
 
-        const addToServer = (data) => {
-            console.log(data)
-            toast.success('Successfully Added!')
+        const addToServer = (portfolioData) => {
+            
+            fetch('http://localhost:5000/portfolio-upload', {
+                method: 'POST',
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(portfolioData)
+            }).then(res => res.json())
+                .then(data => {
+                    if (data) {
+                        setPreviewInput([0]);
+                        toast.success('Successfully Added!')
+                    } else {
+                        toast.error("Something went wrong!")
+                    }
+                })
+            e.target.reset();
         }
 
         if (categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial') {
@@ -55,8 +70,6 @@ const Dashboard = () => {
             addToServer(portfolioData)
 
         }
-
-
     }
 
     const handlePreview = (e, index) => {

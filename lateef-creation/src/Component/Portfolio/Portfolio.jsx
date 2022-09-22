@@ -4,7 +4,7 @@ import PortfolioItem from '../PortfolioItem/PortfolioItem';
 const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     useEffect(() => {
-        fetch('data.json')
+        fetch('http://localhost:5000/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
     }, []);

@@ -8,7 +8,7 @@ const Category = () => {
     const [portfolio, setPortfolio] = useState([]);
     let categoryNameMain = categoryName.split("-").join(" ");
     useEffect(() => {
-        fetch('/public/data.json')
+        fetch('http://localhost:5000/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
     }, []);
