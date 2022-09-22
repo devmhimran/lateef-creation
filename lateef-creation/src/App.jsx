@@ -8,7 +8,8 @@ import SinglePortfolio from './Component/SinglePortfolio/SinglePortfolio'
 import Category from './Component/Category/Category'
 import Footer from './Component/Footer/Footer'
 import Dashboard from './Component/Dashboard/Dashboard'
-import New from './Component/New/New'
+import Login from './Component/Login/Login'
+import ForgetPassword from './Component/ForgetPassword/ForgetPassword'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,8 @@ function App() {
         <Route path="/portfolio/:id" element={<SinglePortfolio />} />
         <Route path="/category/:categoryName" element={<Category/>} />
         <Route path="/lateef-creation-dashboard" element={<Dashboard/>} />
-        <Route path="/new" element={<New></New>} />
+        <Route path="/login" element={<Login></Login>} />
+        <Route path="/forget-password" element={<ForgetPassword></ForgetPassword>} />
       </Routes>
       <Footer></Footer>
     </div>
