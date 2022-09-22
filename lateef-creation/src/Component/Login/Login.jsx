@@ -15,7 +15,7 @@ const Login = () => {
                         <Link className='text-cyan-500' to='/forget-password'>Forget Password?</Link>
                     </div>
                     <div className="login__input mt-6">
-                        <button className='px-6 py-3 bg-white'>Login</button>
+                        <button type='submit' className='px-6 py-3 bg-white'>Login</button>
                     </div>
                 </form>
             </div>
