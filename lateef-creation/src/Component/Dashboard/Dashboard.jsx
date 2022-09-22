@@ -1,9 +1,14 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, Toaster } from 'react-hot-toast';
 import { FiPlus } from 'react-icons/fi';
 import { TbMinus } from 'react-icons/tb';
+import auth from '../firebase.init';
 
 const Dashboard = () => {
+    const [user, loading, error] = useAuthState(auth);
+    console.log(user)
     const [categoryValueData, setCategoryValueData] = useState('');
 
 
@@ -27,7 +32,7 @@ const Dashboard = () => {
         const category = e.target.category.value;
 
         const addToServer = (portfolioData) => {
-            
+
             fetch('http://localhost:5000/portfolio-upload', {
                 method: 'POST',
                 headers: {
@@ -89,12 +94,23 @@ const Dashboard = () => {
         setPreviewInput(values);
     }
 
+    const handleLogOut = () =>{
+        signOut(auth);
+    }
+
+
     return (
         <div className='dashboard__main container mx-auto lg:py-28 py-16  flex justify-center'>
+
             <div className="data__upload__form__main w-2/5 border p-6">
+                <div className='flex justify-between items-center mb-6'>
+                    <h2 className='text-white text-2xl'>Logged In: {user.displayName}</h2>
+                    <button className='text-white' onClick={handleLogOut}>Logout</button>
+                </div>
+                <hr />
                 <div className="form">
                     <form onSubmit={handleSubmit}>
-                        <h2 className='text-white text-3xl'>Upload Project</h2>
+                        <h2 className='text-white text-3xl mt-3'>Upload Project</h2>
                         <input className='p-2 w-full mt-2' type="text" name="name" placeholder='Name' required />
                         {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' : <textarea className='p-2 w-full mt-2' name="description" id="" cols="30" rows="6" placeholder='Description' required></textarea>}
                         <input className='p-2 w-full mt-2' type="text" name="thumbnail" placeholder='Thumbnail' required />

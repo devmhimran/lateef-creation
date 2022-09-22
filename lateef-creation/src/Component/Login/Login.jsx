@@ -1,17 +1,39 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../firebase.init';
 
 const Login = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+    let loginError;
+    if (error) {
+        loginError = error.message;
+    }
+    let from = location.state?.from?.pathname || "/lateef-creation-dashboard";
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
+    const handleLogin = (e) =>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        signInWithEmailAndPassword(email, password);
+
+    }
     return (
         <div className="login__main container mx-auto flex justify-center items-center h-screen">
             <div className="login__content w-2/5 h-fit border p-6">
                 <h2 className='text-white text-2xl'>Login</h2>
-                <form className='mt-6'>
+                <form className='mt-6' onSubmit={handleLogin}>
                     <div className="login__input my-6">
                         <input className='w-full bg-transparent border outline-0 text-white px-3 py-2' placeholder='Email Email' type="email" name="email"/>
                     </div>
                     <div className="login__input my-6">
-                        <input className='w-full bg-transparent border outline-0 text-white px-3 py-2' placeholder='Enter Password' type="password" name="email"/>
+                        <input className='w-full bg-transparent border outline-0 text-white px-3 py-2' placeholder='Enter Password' type="password" name="password"/>
                         <Link className='text-cyan-500' to='/forget-password'>Forget Password?</Link>
                     </div>
                     <div className="login__input mt-6">
