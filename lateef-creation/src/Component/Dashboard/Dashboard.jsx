@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
 import { FiPlus } from 'react-icons/fi';
 import { TbMinus } from 'react-icons/tb';
 
@@ -27,6 +28,7 @@ const Dashboard = () => {
 
         const addToServer = (data) => {
             console.log(data)
+            toast.success('Successfully Added!')
         }
 
         if (categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial') {
@@ -39,7 +41,7 @@ const Dashboard = () => {
                 link
             }
             addToServer(portfolioData)
-  
+
         } else {
             const description = e.target.description.value;
             const previewInputData = previewInput;
@@ -51,9 +53,9 @@ const Dashboard = () => {
                 previewInputData
             }
             addToServer(portfolioData)
-      
+
         }
-        
+
 
     }
 
@@ -80,10 +82,10 @@ const Dashboard = () => {
                 <div className="form">
                     <form onSubmit={handleSubmit}>
                         <h2 className='text-white text-3xl'>Upload Project</h2>
-                        <input className='p-2 w-full mt-2' type="text" name="name" placeholder='Name' />
-                        {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' : <textarea className='p-2 w-full mt-2' name="description" id="" cols="30" rows="6" placeholder='Description'></textarea>}
-                        <input className='p-2 w-full mt-2' type="text" name="thumbnail" placeholder='Thumbnail' />
-                        <select className='p-2 w-full mt-2' name="category" onChange={e => handleCategory(e.target.value)}>
+                        <input className='p-2 w-full mt-2' type="text" name="name" placeholder='Name' required />
+                        {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' : <textarea className='p-2 w-full mt-2' name="description" id="" cols="30" rows="6" placeholder='Description' required></textarea>}
+                        <input className='p-2 w-full mt-2' type="text" name="thumbnail" placeholder='Thumbnail' required />
+                        <select className='p-2 w-full mt-2' name="category" onChange={e => handleCategory(e.target.value)} required>
                             <option value="website-uiux">Website uiux</option>
                             <option value="app-uiux">APP uiux</option>
                             <option value="creative-logo-design">Creative Logo Design</option>
@@ -93,7 +95,7 @@ const Dashboard = () => {
                         {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' :
                             previewInput.map((inputField, index) =>
                                 <div key={index}>
-                                    <input className='p-2 w-full mt-2' type="text" name="previewImage" placeholder='Preview Image' value={inputField.previewImage} onChange={e => handlePreview(e, index)} />
+                                    <input className='p-2 w-full mt-2' type="text" name="previewImage" placeholder='Preview Image' value={inputField.previewImage} onChange={e => handlePreview(e, index)} required />
 
                                     <div className='flex'>
                                         <span className="cursor-pointer m-3 p-2 bg-white text-black" onClick={handleAdd}><FiPlus></FiPlus></span>
@@ -105,12 +107,16 @@ const Dashboard = () => {
                             )}
                         {
                             categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ?
-                                <input className='p-2 w-full mt-2' type="text" name="link" placeholder='Link' /> : ''
+                                <input className='p-2 w-full mt-2' type="text" name="link" placeholder='Link' required /> : ''
                         }
                         <button className='bg-white text-black p-2 mt-3'>Add Project</button>
                     </form>
                 </div>
             </div>
+            <Toaster
+                position="top-center"
+                reverseOrder={false}
+            />
         </div>
     );
 };
