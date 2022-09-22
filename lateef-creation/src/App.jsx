@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Component/Home/Home'
@@ -10,9 +9,8 @@ import Footer from './Component/Footer/Footer'
 import Dashboard from './Component/Dashboard/Dashboard'
 import Login from './Component/Login/Login'
 import ForgetPassword from './Component/ForgetPassword/ForgetPassword'
-import Register from './Component/Register/Register'
 import RequireAuth from './Component/RequireAuth/RequireAuth'
-import Loading from './Component/Loading/Loading'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,7 +29,6 @@ function App() {
 
         <Route path="/login" element={<Login></Login>} />
         <Route path="/forget-password" element={<ForgetPassword></ForgetPassword>} />
-        <Route path="/register" element={<Register></Register>} />
       </Routes>
       <Footer></Footer>
     </div>
