@@ -4,7 +4,7 @@ import PortfolioItem from '../PortfolioItem/PortfolioItem';
 const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     useEffect(() => {
-        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
+        fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
     }, []);
