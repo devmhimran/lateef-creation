@@ -20,7 +20,7 @@ const Category = () => {
                 <div className="category__portfolio mt-8 lg:mt-16">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {
-                            portfolio.filter(categoryData => categoryData.category === categoryName).map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
+                            portfolio.filter(categoryData => categoryData.category === categoryName).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
                         }
                     </div>
                 </div>

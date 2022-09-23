@@ -17,7 +17,7 @@ const PortfolioItem = ({ title, titleEx, data, textAlign, category, home }) => {
             <div className="portfolio__item__main pt-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        data.filter(categoryData => categoryData.category === category ? categoryData : '').slice(0, 3).map(portfolioItem =>
+                        data.filter(categoryData => categoryData.category === category ? categoryData : '').reverse().slice(0, 3).map(portfolioItem =>
                             <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>
                         )
                     }
