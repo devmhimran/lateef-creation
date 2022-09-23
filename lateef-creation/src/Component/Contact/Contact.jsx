@@ -9,10 +9,8 @@ const Contact = () => {
         e.preventDefault();
         emailjs.sendForm('service_to4emq9', 'template_bdceq8d', form.current, 'xWWMZGsAy02ckLYDn')
             .then((result) => {
-                console.log(result.text);
                 toast.success('Successfully Send!')
             }, (error) => {
-                console.log(error.text);
             });
         e.target.reset();
     }

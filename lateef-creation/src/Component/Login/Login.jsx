@@ -36,6 +36,7 @@ const Login = () => {
                         <input className='w-full bg-transparent border outline-0 text-white px-3 py-2' placeholder='Enter Password' type="password" name="password"/>
                         <Link className='text-cyan-500' to='/forget-password'>Forget Password?</Link>
                     </div>
+                    <span className='text-sm text-red-500'>{loginError}</span>
                     <div className="login__input mt-6">
                         <button type='submit' className='px-6 py-3 bg-white'>Login</button>
                     </div>

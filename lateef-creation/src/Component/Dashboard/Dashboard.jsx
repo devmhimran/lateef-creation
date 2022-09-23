@@ -8,7 +8,6 @@ import auth from '../firebase.init';
 
 const Dashboard = () => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user)
     const [categoryValueData, setCategoryValueData] = useState('');
 
 
@@ -16,7 +15,6 @@ const Dashboard = () => {
 
     const handleCategory = (value) => {
         setCategoryValueData(value)
-        console.log(value)
     }
 
     const [previewInput, setPreviewInput] = useState([{
@@ -81,7 +79,6 @@ const Dashboard = () => {
         const values = [...previewInput];
         values[index][e.target.name] = e.target.value;
         setPreviewInput(values)
-        // console.log(values[index])
     }
 
 
