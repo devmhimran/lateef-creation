@@ -33,7 +33,7 @@ const Dashboard = () => {
 
         const addToServer = (portfolioData) => {
 
-            fetch('http://localhost:5000/portfolio-upload', {
+            fetch('https://lateef-creation-server.vercel.app/portfolio-upload', {
                 method: 'POST',
                 headers: {
                     "content-type": "application/json"
