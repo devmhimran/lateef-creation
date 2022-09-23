@@ -49,7 +49,7 @@ const Contact = () => {
                         <textarea className='text-white text-base lg:text-xl placeholder:text-white w-full p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_message" placeholder="What's your message?"  required></textarea>
                     </div>
                     <div className="input__field justify-between py-4">
-                        <button className='contact__send bg-white text-black p-4 lg:p-5 capitalize flex items-center font-bold text-base mx-auto'> <span className='text-2xl mr-2'><FaTelegramPlane></FaTelegramPlane></span> send message</button>
+                        <button className='contact__send bg-white text-black p-4 lg:p-5 border hover:bg-black hover:text-white duration-300 capitalize flex items-center font-bold text-base mx-auto'> <span className='text-2xl mr-2'><FaTelegramPlane></FaTelegramPlane></span> send message</button>
                     </div>
                 </div>
             </form>

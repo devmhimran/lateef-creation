@@ -30,7 +30,9 @@ body {
     background-color: #1F1F1F;
 }
 
-.menu__text {
+.menu__text, 
+.explore__btn
+{
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -55,4 +57,14 @@ body {
 
 title {
     text-transform: capitalize;
+}
+.explore__btn{
+    left: 50%;
+    bottom: 20%;
+    transform: translate(-50%,50%);
+}
+
+.blob__card:hover .explore__btn{
+    display: block;
+    transition: 0.4s ease-in;
 }

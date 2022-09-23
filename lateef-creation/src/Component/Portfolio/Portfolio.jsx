@@ -38,12 +38,21 @@ const Portfolio = () => {
                 >
             </PortfolioItem>
             <PortfolioItem
+                title={'Creative Illustration'}
+                category={'creative-Illustration-design'}
+                titleEx={'design'}
+                data={portfolio}
+                home={'home'}
+                textAlign={'text-end'}
+                >
+            </PortfolioItem>
+            <PortfolioItem
                 title={'Latest Instagram'}
                 category={'latest-instagram-post'}
                 titleEx={'post'}
                 data={portfolio}
                 home={'home'}
-                textAlign={'text-end'}
+                textAlign={'text-start'}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -52,7 +61,7 @@ const Portfolio = () => {
                 titleEx={'tutorial'}
                 data={portfolio}
                 home={'home'}
-                textAlign={'learning-video-tutorial'}
+                textAlign={'text-end'}
                 >
             </PortfolioItem>
         </div>
