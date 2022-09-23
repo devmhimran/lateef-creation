@@ -10,6 +10,7 @@ import Dashboard from './Component/Dashboard/Dashboard'
 import Login from './Component/Login/Login'
 import ForgetPassword from './Component/ForgetPassword/ForgetPassword'
 import RequireAuth from './Component/RequireAuth/RequireAuth'
+import ErrorPage from './Component/ErrorPage/ErrorPage'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
 
         <Route path="/login" element={<Login></Login>} />
         <Route path="/forget-password" element={<ForgetPassword></ForgetPassword>} />
+        <Route path="*" element={<ErrorPage></ErrorPage>} />
       </Routes>
       <Footer></Footer>
     </div>

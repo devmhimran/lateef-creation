@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import SinglePortfolioDetail from '../SinglePortfolioDetail/SinglePortfolioDetail';
-
+import Loading from '../Loading/Loading'
 const SinglePortfolio = () => {
 
     const {id} = useParams();
@@ -10,7 +10,13 @@ const SinglePortfolio = () => {
     useEffect(()=>{
         fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
         .then(res => res.json())
-        .then(data => setPortfolio(data))
+        .then(data => {
+            if(data){
+                setPortfolio(data)
+            }else{
+                return <Loading></Loading>
+            }
+        })
     },[]);
 
     const portfolioDetail = portfolio.find(data => data._id === id);

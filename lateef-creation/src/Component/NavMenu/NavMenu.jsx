@@ -21,19 +21,19 @@ const NavMenu = () => {
                     </button>
                 </div>
             </div>
-            <div className={`dropdown__menu w-full h-screen  bg-[#1F1F1F] duration-500 ease-in z-50 fixed ${open ? 'top-0' : 'top-[-1000px]'}`}>
+            <div className={`dropdown__menu w-full h-screen  bg-[#1F1F1F] duration-500 ease-in z-50  absolute ${open ? 'top-0' : 'top-[-1000px]'}`}>
                     <div onClick={() => setOpen(!open)} className="dropdown__close absolute right-[5%] top-[5%] cursor-pointer">
                         <HiX className='text-3xl lg:text-5xl text-white'></HiX>
                     </div>
                     <div className="dropdown__item flex justify-center items-center w-full h-screen">
 
                         <ul className='text-center'>
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/">Home</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/category/website-uiux">Website UiUx Design</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/category/app-uiux">APP UiUx Design</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/category/creative-logo-design">Creative Logo Design</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/category/latest-instagram-post">LATEST INSTAGRAM POST</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white'><a href="/category/learning-video-tutorial">LEARNING VIDEO TUTORIAL</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/">Home</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/website-uiux">Website UiUx Design</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/app-uiux">APP UiUx Design</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/creative-logo-design">Creative Logo Design</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/latest-instagram-post">LATEST INSTAGRAM POST</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/learning-video-tutorial">LEARNING VIDEO TUTORIAL</a></li> <hr className='border-gray-800 ' />
                         </ul>
                     </div>     
             </div>
