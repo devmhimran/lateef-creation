@@ -10,13 +10,7 @@ const SinglePortfolio = () => {
     useEffect(()=>{
         fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
         .then(res => res.json())
-        .then(data => {
-            if(data){
-                setPortfolio(data)
-            }else{
-                return <Loading></Loading>
-            }
-        })
+        .then(data => setPortfolio(data))
     },[]);
 
     const portfolioDetail = portfolio.find(data => data._id === id);

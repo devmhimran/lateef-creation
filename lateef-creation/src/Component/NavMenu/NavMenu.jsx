@@ -32,7 +32,7 @@ const NavMenu = () => {
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/website-uiux">Website UiUx Design</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/app-uiux">APP UiUx Design</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/creative-logo-design">Creative Logo Design</a></li> <hr className='border-gray-800 ' />
-                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/creative-Illustration-design">creative-Illustration-design</a></li> <hr className='border-gray-800 ' />
+                            <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/creative-Illustration-design">creative Illustration design</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/latest-instagram-post">LATEST INSTAGRAM POST</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/learning-video-tutorial">LEARNING VIDEO TUTORIAL</a></li> <hr className='border-gray-800 ' />
                         </ul>
