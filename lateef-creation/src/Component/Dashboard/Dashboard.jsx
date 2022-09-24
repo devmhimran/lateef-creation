@@ -115,6 +115,7 @@ const Dashboard = () => {
                             <option value="website-uiux">Website uiux</option>
                             <option value="app-uiux">APP uiux</option>
                             <option value="creative-logo-design">Creative Logo Design</option>
+                            <option value="creative-illustration-design">Creative Illustration Design</option>
                             <option value="latest-instagram-post">Latest Instagram Post</option>
                             <option value="learning-video-tutorial">Learning Video Tutorial</option>
                         </select>

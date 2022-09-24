@@ -39,7 +39,7 @@ const Portfolio = () => {
             </PortfolioItem>
             <PortfolioItem
                 title={'Creative Illustration'}
-                category={'creative-Illustration-design'}
+                category={'creative-illustration-design'}
                 titleEx={'design'}
                 data={portfolio}
                 home={'home'}
