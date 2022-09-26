@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
+import Loading from '../Loading/Loading';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
+import PortfolioLoading from '../PortfolioLoading/PortfolioLoading';
 
 const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
+    const [loader, setLoader] = useState(true);
     useEffect(() => {
         fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
+            .catch(err => setLoader(false))
+
     }, []);
+    console.log(loader)
     return (
         <div className='portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0'>
             <PortfolioItem
@@ -17,6 +23,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-start'}
+                loader = {loader}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -26,6 +33,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-end'}
+                loader = {loader}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -35,6 +43,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-start'}
+                loader = {loader}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -44,6 +53,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-end'}
+                loader = {loader}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -53,6 +63,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-start'}
+                loader = {loader}
                 >
             </PortfolioItem>
             <PortfolioItem
@@ -62,6 +73,7 @@ const Portfolio = () => {
                 data={portfolio}
                 home={'home'}
                 textAlign={'text-end'}
+                loader = {loader}
                 >
             </PortfolioItem>
         </div>

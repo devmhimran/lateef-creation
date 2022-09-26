@@ -2,8 +2,9 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import PortfolioItems from '../PortfolioItems/PortfolioItems';
 import arrow from '../../assets/arrow.svg'
+import PortfolioLoading from '../PortfolioLoading/PortfolioLoading';
 
-const PortfolioItem = ({ title, titleEx, data, textAlign, category, home }) => {
+const PortfolioItem = ({ title, titleEx, data, textAlign, category, home, loader }) => {
     const navigate = useNavigate();
     const navigateCategory = (categoryName) => {
         navigate(`/category/${categoryName}`)
@@ -15,13 +16,18 @@ const PortfolioItem = ({ title, titleEx, data, textAlign, category, home }) => {
                 <h1 className='text-white text-2xl lg:text-5xl mt-1 lg:mt-3'>{titleEx}</h1>
             </div>
             <div className="portfolio__item__main pt-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {
-                        data.filter(categoryData => categoryData.category === category ? categoryData : '').reverse().slice(0, 3).map(portfolioItem =>
-                            <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>
-                        )
-                    }
-                </div>
+                {
+                    loader ?
+                        <>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {
+                                    data.filter(categoryData => categoryData.category === category ? categoryData : '').reverse().slice(0, 3).map(portfolioItem =>
+                                        <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>
+                                    )
+                                }
+                            </div>
+                        </> : <PortfolioLoading></PortfolioLoading>
+                }
             </div>
             <div className="explore__button text-center  flex justify-center mt-8">
                 <button className='text-white text-xl lg:text-2xl flex justify-center items-center' onClick={() => navigateCategory(category)}>

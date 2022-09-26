@@ -18,11 +18,16 @@ const Category = () => {
             <div className="category__content mx-3 lg:mx-0">
                 <h1 className='text-white text-3xl lg:text-5xl text-center uppercase'>{categoryNameMain}</h1>
                 <div className="category__portfolio mt-8 lg:mt-16">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {
-                            portfolio.filter(categoryData => categoryData.category === categoryName).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
-                        }
-                    </div>
+                    {
+                        portfolio ?
+                            <>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                    {
+                                        portfolio.filter(categoryData => categoryData.category === categoryName).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
+                                    }
+                                </div>
+                            </>: <h1>No Data Found</h1>
+                    }
                 </div>
             </div>
         </div>
