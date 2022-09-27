@@ -25,7 +25,7 @@ const Contact = () => {
                     </div>
                     <div className="input__field block lg:flex justify-between py-0 lg:py-4">
                         <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_interest"  required>
-                            <option value="">What are you interested in?</option>
+                            <option disabled>What are you interested in?</option>
                             <option value="Need help with a one-off project">Need help with a one-off project</option>
                             <option value="Need Website UIUX Design">Need Website UIUX Design</option>
                             <option value="Need App UIUX Design">Need App UIUX Design</option>
@@ -36,8 +36,8 @@ const Contact = () => {
                             <option value="Just wanted to say Hi!">Just wanted to say Hi!</option>
                         </select>
 
-                        <select className='text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_budget" required>
-                            <option>What's your budget?</option>
+                        <select className='contact__budget text-white text-base lg:text-xl placeholder:text-white w-full lg:w-[45%] p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_budget" required>
+                            <option disabled>What's your budget?</option>
                             <option value="$100-$500">$100-$500</option>
                             <option value="$500-$1000">$500-$1000</option>
                             <option value="$1000-$2000">$1000-$2000</option>
@@ -46,7 +46,7 @@ const Contact = () => {
                         </select>
                     </div>
                     <div className="input__field justify-between py-4">
-                        <textarea className='text-white text-base lg:text-xl placeholder:text-white w-full p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_message" placeholder="What's your message?"  required></textarea>
+                        <textarea className='text-white text-base lg:text-xl placeholder:text-white w-full p-3 outline-0 bg-black border-b border-[#3E3E3E] my-4 lg:my-0' name="user_message" placeholder="Tell me a short story about your project..." required></textarea>
                     </div>
                     <div className="input__field justify-between py-4">
                         <button className='contact__send bg-white text-black p-4 lg:p-5 border hover:bg-black hover:text-white duration-300 capitalize flex items-center font-bold text-base mx-auto'> <span className='text-2xl mr-2'><FaTelegramPlane></FaTelegramPlane></span> send message</button>
