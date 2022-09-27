@@ -13,7 +13,6 @@ const Portfolio = () => {
             .catch(err => setLoader(false))
 
     }, []);
-    console.log(loader)
     return (
         <div className='portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0'>
             <PortfolioItem

@@ -14,7 +14,7 @@ const NavMenu = () => {
                     <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="Lateef Creation Logo" /></Link>
                 </div>
                 <div className="menu flex items-center">
-                    <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><a href="mailto:lateefshuvro@gmail.com">Hire me</a></button>
+                    <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><a href="mailto:lateefcreation@gmail.com">Hire me</a></button>
                     <button onClick={()=> setOpen(!open)} className='menu__text text-lg lg:text-2xl text-white'>
                         <span><img className='ml-auto' src={menu} alt="" /></span>
                         <p className='text-end tracking-[.6em] mr-[-10px] font-semibold'>Menu</p>

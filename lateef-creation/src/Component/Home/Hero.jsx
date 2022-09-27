@@ -10,7 +10,9 @@ const Hero = () => {
                         <p className='text-white text-base lg:text-xl'>WELCOME TO LATEEF CREATION</p>
                         <h1 className='text-4xl lg:text-7xl my-3 text-[#969696]'>I AM YOUR<br></br> <span className='text-white'>UNIQUE</span> DESIGN<br></br> SOLUTION</h1>
                         <p className='hero__title text-sm lg:text-xl uppercase text-[#969696]'>Have a project in mind? would you like to share it? feel free to reach out by writing an e-mail  </p>
-                        <button className='py-3 px-6 bg-white mt-6 lg:mt-9 text-sm lg:text-base border hover:bg-[#1F1F1F] hover:text-white duration-300'>let's work together</button>
+                        <div className='mt-6'>
+                            <a href="mailto:lateefcreation@gmail.com" className='py-3 px-6 bg-white mt-6 lg:mt-9 text-sm lg:text-base border hover:bg-[#1F1F1F] hover:text-white duration-300 uppercase'>let's work together</a>
+                        </div>
                     </div>
                 </div>
                 <div className="hero__main__right mt-10 lg:mt0 w-full lg:w-2/5">
