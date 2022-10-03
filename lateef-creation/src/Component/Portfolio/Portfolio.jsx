@@ -7,7 +7,7 @@ const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     const [loader, setLoader] = useState(true);
     useEffect(() => {
-        fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
+        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
             .catch(err => setLoader(false))

@@ -8,7 +8,7 @@ const SinglePortfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     let portfolioSave = [];
     useEffect(()=>{
-        fetch('https://lateef-creation-v2.onrender.com/portfolio-data')
+        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
         .then(res => res.json())
         .then(data => setPortfolio(data))
     },[]);
