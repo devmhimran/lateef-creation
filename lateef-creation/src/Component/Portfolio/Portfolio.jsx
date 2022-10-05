@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
@@ -7,10 +8,13 @@ const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     const [loader, setLoader] = useState(true);
     useEffect(() => {
-        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
-            .then(res => res.json())
-            .then(data => setPortfolio(data))
-            .catch(err => setLoader(false))
+        // fetch('https://lateef-creation-server.vercel.app/portfolio-data')
+        //     .then(res => res.json())
+        //     .then(data => setPortfolio(data))
+        //     .catch(err => setLoader(false))
+
+        axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
+        .then(data => setPortfolio(data))
 
     }, []);
     return (
