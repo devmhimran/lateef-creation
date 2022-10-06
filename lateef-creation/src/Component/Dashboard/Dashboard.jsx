@@ -5,14 +5,16 @@ import { toast, Toaster } from 'react-hot-toast';
 import { FiPlus } from 'react-icons/fi';
 import { TbMinus } from 'react-icons/tb';
 import auth from '../firebase.init';
+import JSONPretty from 'react-json-pretty';
+import CopyToClipboard from 'react-copy-to-clipboard';
 
 const Dashboard = () => {
+    // var JSONPretty = require('react-json-pretty');
     const [user, loading, error] = useAuthState(auth);
     const [categoryValueData, setCategoryValueData] = useState('');
-
+    const [allData, setAllData] = useState({});
 
     const [link, setLink] = useState('');
-
     const handleCategory = (value) => {
         setCategoryValueData(value)
     }
@@ -20,8 +22,7 @@ const Dashboard = () => {
     const [previewInput, setPreviewInput] = useState([{
         previewImage: ''
     }])
-
-
+ 
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -30,25 +31,26 @@ const Dashboard = () => {
         const category = e.target.category.value;
 
         const addToServer = (portfolioData) => {
-
-            fetch('https://lateef-creation-server.vercel.app/portfolio-upload', {
-                method: 'POST',
-                headers: {
-                    "content-type": "application/json"
-                },
-                body: JSON.stringify(portfolioData)
-            }).then(res => res.json())
-                .then(data => {
-                    if (data) {
-                        setPreviewInput([0]);
-                        toast.success('Successfully Added!')
-                    } else {
-                        toast.error("Something went wrong!")
-                    }
-                })
+            setAllData(portfolioData);
+            
+            // fetch('https://lateef-creation-server.vercel.app/portfolio-upload', {
+            //     method: 'POST',
+            //     headers: {
+            //         "content-type": "application/json"
+            //     },
+            //     body: JSON.stringify(portfolioData)
+            // }).then(res => res.json())
+            //     .then(data => {
+            //         if (data) {
+            //             setPreviewInput([0]);
+            //             toast.success('Successfully Added!')
+            //         } else {
+            //             toast.error("Something went wrong!")
+            //         }
+            //     })
             e.target.reset();
         }
-
+    
         if (categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial') {
             const link = e.target.link.value;
             setLink(link)
@@ -81,7 +83,6 @@ const Dashboard = () => {
         setPreviewInput(values)
     }
 
-
     const handleAdd = () => {
         setPreviewInput([...previewInput, { previewImage: '' }]);
     }
@@ -91,7 +92,7 @@ const Dashboard = () => {
         setPreviewInput(values);
     }
 
-    const handleLogOut = () =>{
+    const handleLogOut = () => {
         signOut(auth);
     }
 
@@ -99,7 +100,7 @@ const Dashboard = () => {
     return (
         <div className='dashboard__main container mx-auto lg:py-28 py-16  flex justify-center'>
 
-            <div className="data__upload__form__main w-2/5 border p-6">
+            <div className="data__upload__form__main w-3/5 border p-6">
                 <div className='flex justify-between items-center mb-6'>
                     <h2 className='text-white text-2xl'>Logged In: {user.displayName}</h2>
                     <button className='text-white' onClick={handleLogOut}>Logout</button>
@@ -138,6 +139,19 @@ const Dashboard = () => {
                         }
                         <button className='bg-white text-black p-2 mt-3'>Add Project</button>
                     </form>
+                </div>
+                <div className="portfolio__form__data border mt-5 p-2">
+                    {/* <div className='ml-auto text-right'>
+                        <CopyToClipboard text={JSON.stringify(allData)}>
+                            <button className='py-1 px-3 bg-white text-black hover:bg-yellow-400'>Copy</button>
+                        </CopyToClipboard>
+
+                    </div> */}
+                    <div className='text-yellow-200 truncate p-2'>
+                        {
+                            <JSONPretty id="json-pretty" data={allData}></JSONPretty>
+                        }
+                    </div>
                 </div>
             </div>
             <Toaster
