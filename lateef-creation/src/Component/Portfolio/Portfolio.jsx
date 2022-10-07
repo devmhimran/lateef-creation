@@ -8,12 +8,12 @@ const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     const [loader, setLoader] = useState(true);
     useEffect(() => {
-        // fetch('https://raw.githubusercontent.com/lateefcreation/lateef-creation-portfolio-data/main/portfolio-data.json')
+        // fetch('https://lateef-creation-server.vercel.app/portfolio-data')
         //     .then(res => res.json())
         //     .then(data => setPortfolio(data))
         //     .catch(err => setLoader(false))
 
-        axios.get('https://raw.githubusercontent.com/lateefcreation/lateef-creation-portfolio-data/main/portfolio-data.json')
+        axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
         .then(data => setPortfolio(data.data))
 
     }, []);
