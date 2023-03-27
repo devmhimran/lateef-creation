@@ -29,7 +29,7 @@ function App() {
             <Dashboard />
           </RequireAuth>} />
 
-        <Route path="/login" element={<Login></Login>} />
+        <Route path="/ltc-admin-login" element={<Login></Login>} />
         <Route path="/loading" element={<PortfolioLoading></PortfolioLoading>} />
         <Route path="/forget-password" element={<ForgetPassword></ForgetPassword>} />
         <Route path="*" element={<ErrorPage></ErrorPage>} />
