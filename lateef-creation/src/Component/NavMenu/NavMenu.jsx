@@ -8,7 +8,7 @@ import { HiX } from 'react-icons/hi';
 const NavMenu = () => {
     const [open, setOpen] = useState(false);
     return (
-        <div className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
+        <div id='nav__menu' className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
                 <div className="logo">
                     <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="Lateef Creation Logo" /></Link>

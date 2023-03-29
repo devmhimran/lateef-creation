@@ -12,6 +12,8 @@ import ForgetPassword from './Component/ForgetPassword/ForgetPassword'
 import RequireAuth from './Component/RequireAuth/RequireAuth'
 import ErrorPage from './Component/ErrorPage/ErrorPage'
 import PortfolioLoading from './Component/PortfolioLoading/PortfolioLoading'
+import AddProject from './Component/AddProject/AddProject'
+import AllProject from './Component/AllProject/AllProject'
 
 
 function App() {
@@ -24,10 +26,21 @@ function App() {
         <Route path="/portfolio/:id" element={<SinglePortfolio />} />
         <Route path="/category/:categoryName" element={<Category />} />
 
-        <Route path="/lateef-creation-dashboard" element={
+        <Route path="lateef-creation-dashboard" element={
           <RequireAuth>
             <Dashboard />
-          </RequireAuth>} />
+          </RequireAuth>} >
+            <Route index element={
+              <RequireAuth>
+              <AllProject />
+            </RequireAuth>
+            } />
+          <Route path="add-project" element={
+            <RequireAuth>
+              <AddProject />
+            </RequireAuth>
+          } />
+        </Route>
 
         <Route path="/ltc-admin-login" element={<Login></Login>} />
         <Route path="/loading" element={<PortfolioLoading></PortfolioLoading>} />

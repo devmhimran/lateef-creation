@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className='footer__main bg-black py-6 w-full'>
+        <footer id='footer' className='footer__main bg-black py-6 w-full'>
             <div className="container container mx-auto max-w-screen-xl block lg:flex justify-between items-center">
                 <div className="footer__social lg:justify-start justify-center flex">
                     <a className='leading-none mr-2' href="https://www.behance.net/lateefcreation">
