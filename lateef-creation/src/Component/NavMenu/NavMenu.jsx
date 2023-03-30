@@ -4,9 +4,12 @@ import laatefCreationLogo from '../../assets/lateef-creation-logo.png'
 import menu from '../../assets/menu.svg'
 import './NavMenu.css'
 import { HiX } from 'react-icons/hi';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../firebase.init';
 
 const NavMenu = () => {
     const [open, setOpen] = useState(false);
+    const [user, loading, error] = useAuthState(auth);
     return (
         <div id='nav__menu' className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
@@ -26,7 +29,6 @@ const NavMenu = () => {
                         <HiX className='text-3xl lg:text-5xl text-white'></HiX>
                     </div>
                     <div className="dropdown__item flex justify-center items-center w-full h-screen">
-
                         <ul className='text-center'>
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/">Home</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/website-uiux">Website UiUx Design</a></li> <hr className='border-gray-800 ' />
@@ -35,6 +37,9 @@ const NavMenu = () => {
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/creative-Illustration-design">creative Illustration design</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/latest-instagram-post">LATEST INSTAGRAM POST</a></li> <hr className='border-gray-800 ' />
                             <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/category/learning-video-tutorial">LEARNING VIDEO TUTORIAL</a></li> <hr className='border-gray-800 ' />
+                            {
+                                user ? <> <li className='my-3 lg:my-5 text-lg lg:text-3xl text-white uppercase'><a href="/lateef-creation-dashboard">Dashboard</a></li> <hr className='border-gray-800 ' /></> : ''
+                            }
                         </ul>
                     </div>     
             </div>

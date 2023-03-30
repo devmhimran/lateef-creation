@@ -7,6 +7,7 @@ import { TbMinus } from 'react-icons/tb';
 import auth from '../firebase.init';
 import PageTitle from '../PageTitle/PageTitle';
 import SidebarTitle from '../SidebarTitle/SidebarTitle';
+import Cookies from 'js-cookie';
 
 const AddProject = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -33,10 +34,11 @@ const AddProject = () => {
 
         const addToServer = (portfolioData) => {
 
-            fetch('https://lateef-creation-server.vercel.app/portfolio-upload', {
+            fetch('http://localhost:5000/portfolio-upload', {
                 method: 'POST',
                 headers: {
-                    "content-type": "application/json"
+                    "Content-type": "application/json",
+                    "authorization": `Bearer ${Cookies.get('accessToken')}`
                 },
                 body: JSON.stringify(portfolioData)
             }).then(res => res.json())
@@ -104,11 +106,11 @@ const AddProject = () => {
             <div className="flex container mx-auto lg:py-28 py-16">
 
                 <div className="data__upload__form__main w-2/5 border p-6">
-                    <div className='flex justify-between items-center mb-6'>
+                    {/* <div className='flex justify-between items-center mb-6'>
                         <h2 className='text-white text-2xl'>Logged In: {user.displayName}</h2>
                         <button className='text-white' onClick={handleLogOut}>Logout</button>
                     </div>
-                    <hr />
+                    <hr /> */}
                     <div className="form">
                         <form onSubmit={handleSubmit}>
                             <h2 className='text-white text-3xl mt-3'>Upload Project</h2>

@@ -20,7 +20,7 @@ const Dashboard = () => {
     return (
         <div className='flex h-screen gap-6'>
         <DashboardSidebar />
-        <div className='p-8 w-full h-screen ml-32 overflow-y-auto'>
+        <div className='p-8 w-full h-screen ml-24 overflow-y-auto'>
             <div className="container mx-auto py-6">
                 <Outlet />
             </div>
