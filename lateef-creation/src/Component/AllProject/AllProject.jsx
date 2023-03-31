@@ -8,12 +8,12 @@ import { Toaster, toast } from 'react-hot-toast';
 const AllProject = () => {
     const [portfolio, setPortfolio] = useState([]);
     useEffect(() => {
-        // fetch('http://localhost:5000/portfolio-data')
+        // fetch('https://lateef-creation-server.vercel.app')
         //     .then(res => res.json())
         //     .then(data => setPortfolio(data))
         //     .catch(err => setLoader(false))
 
-        axios.get('http://localhost:5000/portfolio-data')
+        axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
             .then(data => setPortfolio(data.data))
 
     }, []);
@@ -22,7 +22,7 @@ const AllProject = () => {
         const proceed = window.confirm('Are your sure?');
         if (proceed) {
 
-            const url = `http://localhost:5000/portfolio-data/${id}`;
+            const url = `https://lateef-creation-server.vercel.app/portfolio-data/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

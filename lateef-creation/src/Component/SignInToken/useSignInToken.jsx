@@ -14,7 +14,7 @@ const useSignInToken = (user) =>{
         };
 
         if (email) {
-            fetch(`http://localhost:5000/user/${email}`, {
+            fetch(`https://lateef-creation-server.vercel.app/user/${email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'

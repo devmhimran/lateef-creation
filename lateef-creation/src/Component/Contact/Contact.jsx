@@ -7,7 +7,7 @@ const Contact = () => {
     const form = useRef();
     const sendEmail = (e) => {
         e.preventDefault();
-        emailjs.sendForm('service_to4emq9', 'template_bdceq8d', form.current, 'xWWMZGsAy02ckLYDn')
+        emailjs.sendForm('service_k29123p', 'template_bdceq8d', form.current, 'xWWMZGsAy02ckLYDn')
             .then((result) => {
                 toast.success('Successfully Send!')
             }, (error) => {

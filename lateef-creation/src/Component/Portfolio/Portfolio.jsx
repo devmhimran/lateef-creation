@@ -3,23 +3,25 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../Loading/Loading';
 import PortfolioItem from '../PortfolioItem/PortfolioItem';
 import PortfolioLoading from '../PortfolioLoading/PortfolioLoading';
+import AllPortfolio from '../AllPortfolio/AllPortfolio';
 
 const Portfolio = () => {
     const [portfolio, setPortfolio] = useState([]);
     const [loader, setLoader] = useState(true);
     useEffect(() => {
-        // fetch('http://localhost:5000/portfolio-data')
+        // fetch('https://lateef-creation-server.vercel.app')
         //     .then(res => res.json())
         //     .then(data => setPortfolio(data))
         //     .catch(err => setLoader(false))
 
-        axios.get('http://localhost:5000/portfolio-data')
+        axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
         .then(data => setPortfolio(data.data))
 
     }, []);
     return (
         <div className='portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0'>
-            <PortfolioItem
+            <AllPortfolio key={1} portfolio={portfolio} />
+            {/* <PortfolioItem
                 title={'Website uiux'}
                 category={'website-uiux'}
                 titleEx={'design'}
@@ -78,7 +80,7 @@ const Portfolio = () => {
                 textAlign={'text-end'}
                 loader = {loader}
                 >
-            </PortfolioItem>
+            </PortfolioItem> */}
         </div>
     );
 };

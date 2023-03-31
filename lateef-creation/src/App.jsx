@@ -14,6 +14,7 @@ import ErrorPage from './Component/ErrorPage/ErrorPage'
 import PortfolioLoading from './Component/PortfolioLoading/PortfolioLoading'
 import AddProject from './Component/AddProject/AddProject'
 import AllProject from './Component/AllProject/AllProject'
+import PortfolioPage from './Component/PortfolioPage/PortfolioPage'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/portfolio/:id" element={<SinglePortfolio />} />
         <Route path="/category/:categoryName" element={<Category />} />
+        <Route path="/portfolio" element={<PortfolioPage/>} />
 
         <Route path="lateef-creation-dashboard" element={
           <RequireAuth>
