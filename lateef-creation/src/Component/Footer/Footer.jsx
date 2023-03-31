@@ -7,6 +7,7 @@ import lateefCreationLogo from '../../assets/lateef-creation-logo.png'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
+    const d = new Date();
     return (
         <footer id='footer' className='footer__main bg-black py-6 w-full'>
             <div className="container container mx-auto max-w-screen-xl block lg:flex justify-between items-center">
@@ -48,7 +49,7 @@ const Footer = () => {
                     </a>
                 </div>
                 <div className="footer__detail lg:flex block items-center">
-                    <p className='text-white copyright__text lg:text-end text-center text-sm lg:text-base mr-0 lg:mr-8 lg:my-0 my-4'>Copyright © 2022 | All rights reserved</p>
+                    <p className='text-white copyright__text lg:text-end text-center text-sm lg:text-base mr-0 lg:mr-8 lg:my-0 my-4'>Copyright © {d.getFullYear()} | All rights reserved</p>
                     <Link to="/">
                         <img className='w-32 lg:w-40 mx-auto' src={lateefCreationLogo} alt="Lateef Creation Logo" />
                     </Link>
