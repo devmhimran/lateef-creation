@@ -20,7 +20,17 @@ const Portfolio = () => {
     }, []);
     return (
         <div className='portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0'>
-            <AllPortfolio key={1} portfolio={portfolio} />
+            <AllPortfolio key={1} portfolio={portfolio}/>
+            {/* <PortfolioItem
+                title={'Website uiux'}
+                category={'website-uiux'}
+                titleEx={'design'}
+                data={portfolio}
+                home={'home'}
+                textAlign={'text-start'}
+                loader = {loader}
+                >
+            </PortfolioItem> */}
             {/* <PortfolioItem
                 title={'Website uiux'}
                 category={'website-uiux'}

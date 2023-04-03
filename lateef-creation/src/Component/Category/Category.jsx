@@ -8,7 +8,7 @@ const Category = () => {
     const [portfolio, setPortfolio] = useState([]);
     let categoryNameMain = categoryName.split("-").join(" ");
     useEffect(() => {
-        fetch('https://lateef-creation-server.vercel.app')
+        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
             .then(res => res.json())
             .then(data => setPortfolio(data))
     }, []);

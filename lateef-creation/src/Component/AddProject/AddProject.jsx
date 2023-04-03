@@ -34,14 +34,21 @@ const AddProject = () => {
 
         const addToServer = (portfolioData) => {
 
-            fetch('http://localhost:5000/portfolio-upload', {
+            fetch('https://lateef-creation-server.vercel.app/portfolio-upload', {
                 method: 'POST',
                 headers: {
                     "Content-type": "application/json",
                     "authorization": `Bearer ${Cookies.get('accessToken')}`
                 },
                 body: JSON.stringify(portfolioData)
-            }).then(res => res.json())
+
+            }).then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    Cookies.remove('accessToken')
+                }
+                return res.json()
+            })
                 .then(data => {
                     if (data) {
                         setPreviewInput([0]);
@@ -105,7 +112,7 @@ const AddProject = () => {
             <SidebarTitle title='Add Project' />
             <div className="flex container mx-auto lg:py-28 py-16">
 
-                <div className="data__upload__form__main w-2/5 border p-6">
+                <div className="data__upload__form__main w-4/5 border p-6">
                     {/* <div className='flex justify-between items-center mb-6'>
                         <h2 className='text-white text-2xl'>Logged In: {user.displayName}</h2>
                         <button className='text-white' onClick={handleLogOut}>Logout</button>

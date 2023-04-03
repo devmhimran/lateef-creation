@@ -3,7 +3,7 @@ import arrow from '../../assets/arrow.svg'
 import PortfolioItems from '../PortfolioItems/PortfolioItems';
 import { Link } from 'react-router-dom';
 
-const AllPortfolio = ({ portfolio }) => {
+const AllPortfolio = ({ portfolio, home }) => {
 
     return (
         <div className='portfolio__item py-16 lg:py-24'>
@@ -14,7 +14,7 @@ const AllPortfolio = ({ portfolio }) => {
             <div className="portfolio__item__main pt-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        [...portfolio].slice(0,9).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem}></PortfolioItems>)
+                        [...portfolio].slice(0,9).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>)
                     }
                 </div>
                 {/* {

@@ -15,7 +15,6 @@ const TableData = ({ data }) => {
                 .then(data => {
                     const remainingService = products.filter(products => products._id !== id);
                     setProducts(remainingService);
-                    console.log(data);
                 })
         }
     }

@@ -14,7 +14,6 @@ const ForgetPassword = () => {
             icon: '📧',
           });
           e.target.reset();
-        console.log(email)
     }
     return (
         <div className='forget__password container mx-auto flex justify-center items-center h-screen'>

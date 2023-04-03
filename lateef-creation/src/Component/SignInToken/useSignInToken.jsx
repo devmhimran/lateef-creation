@@ -24,6 +24,7 @@ const useSignInToken = (user) =>{
                 .then(res => res.json())
                 .then(data => {
                     const accessToken = data.token;
+                    
                     Cookies.set('accessToken', accessToken)
                     // localStorage.setItem('accessToken', accessToken);
                     setToken(accessToken);
