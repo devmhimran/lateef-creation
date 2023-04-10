@@ -14,7 +14,7 @@ const AllPortfolio = ({ portfolio, home }) => {
             <div className="portfolio__item__main pt-10">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {
-                        [...portfolio].slice(0,9).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>)
+                        [...portfolio].reverse().slice(0,9).map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem} home={home}></PortfolioItems>)
                     }
                 </div>
                 {/* {

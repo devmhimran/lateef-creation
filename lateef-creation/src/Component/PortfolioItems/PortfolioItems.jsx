@@ -7,7 +7,6 @@ import { useState } from 'react';
 const PortfolioItems = ({ portfolioItem, home }) => {
     const { thumbnail, _id, link, name } = portfolioItem;
     const [isShown, setIsShown] = useState(false);
-    console.log(isShown)
     const navigate = useNavigate();
     const navigateId = (designId, postLink) => {
         if (postLink) {

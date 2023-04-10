@@ -7,11 +7,26 @@ const Category = () => {
     const { categoryName } = useParams();
     const [portfolio, setPortfolio] = useState([]);
     let categoryNameMain = categoryName.split("-").join(" ");
+    let content;
     useEffect(() => {
-        fetch('https://lateef-creation-server.vercel.app/portfolio-data')
+        fetch(`https://lateef-creation-server.vercel.app/category/${categoryName}`)
             .then(res => res.json())
             .then(data => setPortfolio(data))
     }, []);
+    if (portfolio.length === 0) {
+        content = <><h1 className='text-3xl text-center text-gray-400'>Nothing Update Yet</h1></>
+        console.log('data = 0')
+    } else {
+        content =
+            <><div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    [...portfolio].reverse().map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem}></PortfolioItems>)
+                }
+            </div>
+            </>
+
+    }
+
     return (
         <div className="category__main container mx-auto max-w-screen-xl py-20 lg:py-32">
             <PageTitle title={categoryNameMain}></PageTitle>
@@ -21,12 +36,12 @@ const Category = () => {
                     {
                         portfolio ?
                             <>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {
-                                        portfolio.filter(categoryData => categoryData.category === categoryName).reverse().map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
-                                    }
-                                </div>
-                            </>: <h1>No Data Found</h1>
+
+                                {
+                                    content
+                                }
+
+                            </> : <h1>No Data Found</h1>
                     }
                 </div>
             </div>

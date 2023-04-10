@@ -15,6 +15,7 @@ import PortfolioLoading from './Component/PortfolioLoading/PortfolioLoading'
 import AddProject from './Component/AddProject/AddProject'
 import AllProject from './Component/AllProject/AllProject'
 import PortfolioPage from './Component/PortfolioPage/PortfolioPage'
+import AllTestProject from './Component/AllTestProject/AllTestProject'
 
 
 function App() {
@@ -40,6 +41,11 @@ function App() {
           <Route path="add-project" element={
             <RequireAuth>
               <AddProject />
+            </RequireAuth>
+          } />
+          <Route path="test-project" element={
+            <RequireAuth>
+              <AllTestProject />
             </RequireAuth>
           } />
         </Route>

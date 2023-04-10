@@ -53,8 +53,14 @@ const AddProject = () => {
                     if (data) {
                         setPreviewInput([0]);
                         toast.success('Successfully Added!')
+                        setInterval(function(){
+                            location.reload();
+                        }, 1200);
                     } else {
                         toast.error("Something went wrong!")
+                        setInterval(function(){
+                            location.reload();
+                        }, 1200);
                     }
                 })
             e.target.reset();
@@ -127,6 +133,7 @@ const AddProject = () => {
                             <select className='p-2 w-full mt-2' name="category" onChange={e => handleCategory(e.target.value)} required>
                                 <option value="website-uiux">Website uiux</option>
                                 <option value="app-uiux">APP uiux</option>
+                                <option value="dashboard-design">Dashboard Design</option>
                                 <option value="creative-logo-design">Creative Logo Design</option>
                                 <option value="creative-illustration-design">Creative Illustration Design</option>
                                 <option value="latest-instagram-post">Latest Instagram Post</option>

@@ -115,6 +115,25 @@ title {
     height: 100%;
     overflow: hidden;
 }
+.portfolio__items:hover{
+    /* box-shadow: 2px -2px 76px 4px rgba(0,0,0,0.1) !important;
+-webkit-box-shadow: 2px -2px 76px 4px rgba(0,0,0,0.1) !important;
+-moz-box-shadow: 2px -2px 76px 4px rgba(0,0,0,0.1) !important; */
+
+/* box-shadow: 2px -2px 76px 4px rgba(255,244,78,1)!important;
+-webkit-box-shadow: 2px -2px 76px 4px rgba(255,244,78,1)!important;
+-moz-box-shadow: 2px -2px 76px 4px rgba(255,244,78,1)!important; */
+
+/* box-shadow: 3px 1px 72px 6px rgba(255,244,78,1)!important;
+-webkit-box-shadow: 3px 1px 72px 6px rgba(255,244,78,1)!important;
+-moz-box-shadow: 3px 1px 72px 6px rgba(255,244,78,1)!important; */
+
+/* box-shadow: 2px -2px 76px 4px rgba(255,255,255,1)!important;
+-webkit-box-shadow: 2px -2px 76px 4px rgba(255,255,255,1)!important;
+-moz-box-shadow: 2px -2px 76px 4px rgba(255,255,255,1)!important; */
+
+z-index: 100;
+}
 
 /* .gradient{
     width: 600px;
