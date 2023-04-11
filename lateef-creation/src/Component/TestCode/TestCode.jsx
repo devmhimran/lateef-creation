@@ -9,7 +9,7 @@ import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
-const AllTestProject = () => {
+const TestCode = () => {
   const [portfolio, setPortfolio] = useState([]);
   const navigate = useNavigate();
 
@@ -104,7 +104,7 @@ const AllTestProject = () => {
                         <div className='w-16 h-16 overflow-hidden'>
                           <img
                             className='h-full w-full object-cover'
-                            src={data.thumbnail}
+                            src={data.imageURL}
                             alt={data.name}
                           />
                         </div>
@@ -133,4 +133,4 @@ const AllTestProject = () => {
   );
 };
 
-export default AllTestProject;
+export default TestCode;

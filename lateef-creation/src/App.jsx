@@ -16,6 +16,7 @@ import AddProject from './Component/AddProject/AddProject'
 import AllProject from './Component/AllProject/AllProject'
 import PortfolioPage from './Component/PortfolioPage/PortfolioPage'
 import AllTestProject from './Component/AllTestProject/AllTestProject'
+import TestCode from './Component/TestCode/TestCode'
 
 
 function App() {
@@ -46,6 +47,11 @@ function App() {
           <Route path="test-project" element={
             <RequireAuth>
               <AllTestProject />
+            </RequireAuth>
+          } />
+          <Route path="test-code" element={
+            <RequireAuth>
+              <TestCode />
             </RequireAuth>
           } />
         </Route>
