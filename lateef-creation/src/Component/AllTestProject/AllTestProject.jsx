@@ -8,33 +8,33 @@ import { signOut } from 'firebase/auth';
 import auth from '../firebase.init';
 import { useNavigate } from 'react-router-dom';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import { useMutation, useQuery } from 'react-query';
 
 const AllTestProject = () => {
-  const [portfolio, setPortfolio] = useState([]);
+  // const [portfolio, setPortfolio] = useState([]);
   const navigate = useNavigate();
+  let content;
 
-  useEffect(() => {
-    fetch('https://lateef-creation-server.vercel.app/portfolio-admin-data', {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json',
-        authorization: `Bearer ${Cookies.get('accessToken')}`,
-      },
-    })
-      .then((res) => {
-        if (res.status === 401 || res.status === 403) {
-          signOut(auth);
-          navigate('/ltc-admin-login');
-          Cookies.remove('accessToken');
-        }
-        return res.json();
-      })
-      .then((data) => setPortfolio(data));
+  const { data: portfolio, isLoading, isError } = useQuery('portfolio', () =>
+  fetch('https://lateef-creation-server.vercel.app/portfolio-admin-data', {
+    method: 'GET',
+    headers: {
+      'Content-type': 'application/json',
+      authorization: `Bearer ${Cookies.get('accessToken')}`,
+    },
+  }).then((res) => {
+    if (res.status === 401 || res.status === 403) {
+      signOut(auth);
+      navigate('/ltc-admin-login');
+      Cookies.remove('accessToken');
+    }
+    return res.json();
+  })
+);
 
-    // axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
-    //     .then(data => setPortfolio(data.data))
 
-  }, []);
+
 
   const handleDelete = (id) => {
     const proceed = window.confirm('Are your sure?');
@@ -58,7 +58,7 @@ const AllTestProject = () => {
           const remainingData = portfolio.filter(
             (portfolioData) => portfolioData._id !== id
           );
-          setPortfolio(remainingData);
+          // setPortfolio(remainingData);
           if (data.deletedCount === 1) {
             toast.success('Successfully Delete!');
           } else {
@@ -68,13 +68,80 @@ const AllTestProject = () => {
     }
   };
 
+  const updatePortfolio = (newPortfolio) => {
+  console.log(newPortfolio)
+  fetch('http://localhost:5000/portfolio-admin-data', {
+    method: 'PUT',
+    headers: {
+      'Content-type': 'application/json',
+      authorization: `Bearer ${Cookies.get('accessToken')}`,
+    },
+    body: JSON.stringify(newPortfolio),
+  }
+);}
+
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
     const items = Array.from(portfolio);
     const [reorderedItem] = items.splice(result.source.index, 1);
     items.splice(result.destination.index, 0, reorderedItem);
-    setPortfolio(items);
+    reorderedItem.index = result.destination.index;
+    updatePortfolio(items);
+    // setPortfolio(items);
   };
+
+
+
+  if (isLoading) {
+    content = <div>Loading...</div>;
+  } else if (isError) {
+  content = <div>Error loading portfolio data</div>;
+  } else if (portfolio.length) {
+    content = <>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
+        <Droppable droppableId='portfolio'>
+          {(provided) => (
+            <div {...provided.droppableProps} ref={provided.innerRef}>
+              {portfolio.map((data, index) => (
+                <Draggable key={data._id} draggableId={data._id} index={index}>
+                  {(provided) => (
+                    <div
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      ref={provided.innerRef}
+                      className='py-1 px-2 bg-white flex justify-between items-center my-1'
+                    >
+                      <span className='w-6'><RxHamburgerMenu/></span>
+                      <div className='w-16 h-16 overflow-hidden'>
+                        <img
+                          className='h-full w-full object-cover'
+                          src={data.thumbnail}
+                          alt={data.name}
+                        />
+                      </div>
+                      <p className=''>{data.name}</p>
+                      <p className=''>{data.category}</p>
+                      <div className='flex space-x-1'>
+                        <button
+                          className='text-red-600'
+                          onClick={() => handleDelete(data._id)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
+    </>
+  }else{
+    content = <><h1>Data not found</h1></>
+  }
 
   return (
     <div className='add__project__main'>
@@ -88,45 +155,9 @@ const AllTestProject = () => {
           <p className=''>Option</p>
         </div>
 
-        <DragDropContext onDragEnd={handleOnDragEnd}>
-          <Droppable droppableId='portfolio'>
-            {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
-                {portfolio.map((data, index) => (
-                  <Draggable key={data._id} draggableId={data._id} index={index}>
-                    {(provided) => (
-                      <div
-                        {...provided.draggableProps}
-                        {...provided.dragHandleProps}
-                        ref={provided.innerRef}
-                        className='py-1 px-2 bg-white flex justify-between items-center my-1'
-                      >
-                        <div className='w-16 h-16 overflow-hidden'>
-                          <img
-                            className='h-full w-full object-cover'
-                            src={data.thumbnail}
-                            alt={data.name}
-                          />
-                        </div>
-                        <p className=''>{data.name}</p>
-                        <p className=''>{data.category}</p>
-                        <div className='flex space-x-1'>
-                          <button
-                            className='text-red-600'
-                            onClick={() => handleDelete(data._id)}
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </div>
-            )}
-          </Droppable>
-        </DragDropContext>
+        {
+          content
+        }
       </div>
       <Toaster />
     </div>

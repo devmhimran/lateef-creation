@@ -32,7 +32,7 @@ const BlobSection = () => {
                 <div className="blob__card border border-[#3E3E3E] py-24 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:-translate-y-5 relative">
                     <img className='mx-auto pb-3' src={dashboardIcon} alt="" />
                     <p className='text-lg text-white text-center mt-3'>Dashboard Design</p>
-                    <Link to='/category/creative-logo-design' className='bg-white text-black w-6/12 text-center flex items-center font-bold mx-auto explore__btn hidden duration-500 absolute'><div className='flex py-2 justify-center'> Explore <img className='ml-2 w-6' src={arrowBlack} alt="" /></div></Link>
+                    <Link to='/category/dashboard-design' className='bg-white text-black w-6/12 text-center flex items-center font-bold mx-auto explore__btn hidden duration-500 absolute'><div className='flex py-2 justify-center'> Explore <img className='ml-2 w-6' src={arrowBlack} alt="" /></div></Link>
                 </div>
                 {/* <div className="blob__card border border-[#3E3E3E] py-24 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:-translate-y-5 relative">
                     <img className='mx-auto pb-3' src={lateefCreationLogo} alt="" />
