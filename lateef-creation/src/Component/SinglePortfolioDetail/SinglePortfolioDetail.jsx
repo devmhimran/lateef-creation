@@ -4,12 +4,14 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const SinglePortfolioDetail = ({ portfolioDetail }) => {
     const { name, description, thumbnail, previewInputData, category } = portfolioDetail;
+    console.log(description)
     return (
         <div className="">
             <PageTitle title={name}></PageTitle>
             <div className="single__portfolio__detail container mx-auto max-w-screen-xl text-center">
                 <h1 className='text-3xl lg:text-5xl text-white mx-0 lg:mx-24 leading-snug'>{name}</h1>
-                <p className='text-base lg:text-xl text-[#969696] leading-normal mt-6 llg:mt-11 mx-8 lg:mx-14'>{description}</p>
+                {/* <p className='text-base lg:text-xl text-[#969696] leading-normal mt-6 llg:mt-11 mx-8 lg:mx-14'>{description}</p> */}
+                <p className='text-base lg:text-xl text-[#969696] leading-normal mt-6 llg:mt-11 mx-8 lg:mx-14 bg-transparent' dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <div className="single__portfolio__preview__image mt-11">
                 {

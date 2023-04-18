@@ -28,7 +28,7 @@ const PortfolioPage = () => {
                             <>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                                     {
-                                        [...portfolio].reverse().map(portfolioItem => <PortfolioItems key={portfolioItem.id} portfolioItem={portfolioItem}></PortfolioItems>)
+                                        [...portfolio].reverse().map(portfolioItem => <PortfolioItems key={portfolioItem._id} portfolioItem={portfolioItem}></PortfolioItems>)
                                     }
                                 </div>
                             </>: <h1>No Data Found</h1>

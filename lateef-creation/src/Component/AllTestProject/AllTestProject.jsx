@@ -102,7 +102,7 @@ const AllTestProject = () => {
         <Droppable droppableId='portfolio'>
           {(provided) => (
             <div {...provided.droppableProps} ref={provided.innerRef}>
-              {portfolio.map((data, index) => (
+              {[...portfolio].reverse().map((data, index) => (
                 <Draggable key={data._id} draggableId={data._id} index={index}>
                   {(provided) => (
                     <div

@@ -25,8 +25,8 @@ const BlobSection = () => {
                 </div>
                 <div className="blob__card border border-[#3E3E3E] py-24 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:-translate-y-5 relative">
                     {/* <AiFillMobile className='text-white text-6xl mx-auto'></AiFillMobile> */}
-                    <img className='mx-auto pb-3' src={lateefCreationApp} alt="" />
-                    <p className='text-lg text-white text-center mt-3'>APP UI/UX DESIGN</p>
+                    <img className='mx-auto pb-3' src={lateefCreationIllustration} alt="" />
+                    <p className='text-lg text-white text-center mt-3'>LOGO DESIGN</p>
                     <Link to='/category/app-uiux' className='bg-white text-black w-6/12 text-center flex items-center font-bold mx-auto explore__btn hidden duration-500 absolute'><div className='flex py-2 justify-center'> Explore <img className='ml-2 w-6' src={arrowBlack} alt="" /></div></Link>
                 </div>
                 <div className="blob__card border border-[#3E3E3E] py-24 px-4 hover:bg-black hover:border-black ease-in-out duration-500 lg:hover:-translate-y-5 relative">

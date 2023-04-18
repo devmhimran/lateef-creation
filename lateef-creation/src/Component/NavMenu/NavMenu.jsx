@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import laatefCreationLogo from '../../assets/lateef-creation-logo.png'
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import laatefCreationLogo from '../../assets/Lateef-Creation-Logo.svg'
 import menu from '../../assets/menu.svg'
 import './NavMenu.css'
 import { HiX } from 'react-icons/hi';
@@ -10,14 +10,36 @@ import auth from '../firebase.init';
 const NavMenu = () => {
     const [open, setOpen] = useState(false);
     const [user, loading, error] = useAuthState(auth);
+    const location = useLocation();
+    const navigate = useNavigate()
+    const handleHireMeClick =  () => {
+        const contactSection = document.getElementById('contact-form');
+        // if (contactSection) {
+            if  (location.pathname === '/') {
+                console.log(location.pathname)
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                console.log(location.pathname)
+                navigate('/#contact-form')
+                // location.href = '/';
+                // setInterval(function(){
+                //     location.hash = 'contact-form';
+                // }, 1000);
+                 
+                
+            }
+        // }
+    };
     return (
         <div id='nav__menu' className='navmenu__main relative pt-8 lg:mx-0 mx-3'>
             <div className="container mx-auto max-w-screen-xl flex justify-between items-center">
-                <div className="logo">
-                    <Link to='/'><img className='w-32 lg:w-min' src={laatefCreationLogo} alt="Lateef Creation Logo" /></Link>
+                <div className="logo w-36 lg:w-48">
+                    <Link to='/'><img className='lg:w-min' src={laatefCreationLogo} alt="Lateef Creation Logo" /></Link>
                 </div>
                 <div className="menu flex items-center">
-                    <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><a href="#contact-form">Hire me</a></button>
+                    {/* <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><a href="/#contact-form">Hire me</a></button> */}
+                    {/* <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><Link to='/#contact-form'>Hire me</Link></button> */}
+                    <button className='hire__button text-base bg-white py-3 px-6 mr-7 hidden lg:block'><span onClick={handleHireMeClick}>Hire me</span></button>
                     <button onClick={()=> setOpen(!open)} className='menu__text text-lg lg:text-2xl text-white'>
                         <span><img className='ml-auto' src={menu} alt="" /></span>
                         <p className='text-end tracking-[.6em] mr-[-10px] font-semibold'>Menu</p>

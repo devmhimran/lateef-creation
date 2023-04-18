@@ -1,5 +1,5 @@
 import { signOut } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, Toaster } from 'react-hot-toast';
 import { FiPlus } from 'react-icons/fi';
@@ -8,13 +8,14 @@ import auth from '../firebase.init';
 import PageTitle from '../PageTitle/PageTitle';
 import SidebarTitle from '../SidebarTitle/SidebarTitle';
 import Cookies from 'js-cookie';
+import JoditEditor from 'jodit-react';
 
 const AddProject = () => {
     const [user, loading, error] = useAuthState(auth);
     const [categoryValueData, setCategoryValueData] = useState('');
-
-
+    const [content, setContent] = useState('');
     const [link, setLink] = useState('');
+    const editor = useRef(null);
 
     const handleCategory = (value) => {
         setCategoryValueData(value)
@@ -53,12 +54,12 @@ const AddProject = () => {
                     if (data) {
                         setPreviewInput([0]);
                         toast.success('Successfully Added!')
-                        setInterval(function(){
+                        setInterval(function () {
                             location.reload();
                         }, 1200);
                     } else {
                         toast.error("Something went wrong!")
-                        setInterval(function(){
+                        setInterval(function () {
                             location.reload();
                         }, 1200);
                     }
@@ -78,13 +79,14 @@ const AddProject = () => {
             addToServer(portfolioData)
 
         } else {
-            const description = e.target.description.value;
+            // const description = e.target.description.value;
             const previewInputData = previewInput;
             const portfolioData = {
                 name,
                 thumbnail,
                 category,
-                description,
+                // description,
+                description: content,
                 previewInputData
             }
             addToServer(portfolioData)
@@ -128,7 +130,16 @@ const AddProject = () => {
                         <form onSubmit={handleSubmit}>
                             <h2 className='text-white text-3xl mt-3'>Upload Project</h2>
                             <input className='p-2 w-full mt-2' type="text" name="name" placeholder='Name' required />
-                            {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' : <textarea className='p-2 w-full mt-2' name="description" id="" cols="30" rows="6" placeholder='Description' required></textarea>}
+                            {categoryValueData === 'latest-instagram-post' || categoryValueData === 'learning-video-tutorial' ? '' : 
+                            // <textarea className='p-2 w-full mt-2' name="description" id="" cols="30" rows="6" placeholder='Description' required></textarea>
+                            <JoditEditor
+                            className='p-4 bg-[#1F1F1F]'
+                            ref={editor}
+                            value={content}
+                            onChange={newContent => setContent(newContent)}
+                            style={{ backgroundColor: 'transparent' }}
+                        />
+                            }
                             <input className='p-2 w-full mt-2' type="text" name="thumbnail" placeholder='Thumbnail' required />
                             <select className='p-2 w-full mt-2' name="category" onChange={e => handleCategory(e.target.value)} required>
                                 <option value="website-uiux">Website uiux</option>
