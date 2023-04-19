@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './Component/Home/Home'
@@ -20,9 +20,23 @@ import TestCode from './Component/TestCode/TestCode'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  useEffect(() => {
+    var circle = document.getElementById('circle');
+
+    if (circle) {
+
+      window.addEventListener("mousemove", function(dets) {
+        gsap.to(circle,{
+          x: dets.clientX,
+          y: dets.clientY,
+          duration: 0.3,
+          ease: "Expo.easeOut"
+        });
+      });
+    }
+  }, []); 
   return (
-    <div className="App">
+    <div className="App relative">
       <NavMenu></NavMenu>
       <Routes>
         <Route path="/" element={<Home />} />

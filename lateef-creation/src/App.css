@@ -13,6 +13,14 @@ font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
+body{
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#circle{
+    transform: translate(-50%,-50%);
+}
 
 ::-webkit-scrollbar {
     width: 10px;

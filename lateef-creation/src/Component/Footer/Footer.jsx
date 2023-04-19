@@ -3,7 +3,7 @@ import { BsBehance, BsTwitter } from 'react-icons/bs';
 import { SiDribbble } from 'react-icons/si';
 import { RiInstagramFill } from 'react-icons/ri';
 import { FaFacebookF, FaYoutube, FaLinkedinIn } from 'react-icons/fa';
-import lateefCreationLogo from '../../assets/lateef-creation-logo.png'
+import lateefCreationLogo from '../../assets/Lateef-Creation-Logo.svg'
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
