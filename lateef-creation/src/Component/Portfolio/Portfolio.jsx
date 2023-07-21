@@ -1,27 +1,39 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import Loading from '../Loading/Loading';
-import PortfolioItem from '../PortfolioItem/PortfolioItem';
-import PortfolioLoading from '../PortfolioLoading/PortfolioLoading';
-import AllPortfolio from '../AllPortfolio/AllPortfolio';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import Loading from "../Loading/Loading";
+import PortfolioItem from "../PortfolioItem/PortfolioItem";
+import PortfolioLoading from "../PortfolioLoading/PortfolioLoading";
+import AllPortfolio from "../AllPortfolio/AllPortfolio";
+import { useQuery } from "react-query";
+import AllPortfolioSkeleton from "../Skeleton/AllPortfolioSkeleton";
 
 const Portfolio = () => {
-    const [portfolio, setPortfolio] = useState([]);
-    const [loader, setLoader] = useState(true);
-    useEffect(() => {
-        // fetch('https://lateef-creation-server.vercel.app')
-        //     .then(res => res.json())
-        //     .then(data => setPortfolio(data))
-        //     .catch(err => setLoader(false))
+  const getPortfolios = () =>
+    axios
+      .get("https://lateef-creation-server.vercel.app/portfolio-data")
+      .then((data) => data.data);
 
-        axios.get('https://lateef-creation-server.vercel.app/portfolio-data')
-        .then(data => setPortfolio(data.data))
+  const {
+    data: portfolio,
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["all-portfolio-data"],
+    queryFn: getPortfolios,
+  });
 
-    }, []);
-    return (
-        <div className='portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0'>
-            <AllPortfolio key={1} portfolio={portfolio}/>
-            {/* <PortfolioItem
+  useEffect(() => {
+    refetch();
+  }, []);
+
+  if (isLoading) {
+    return <AllPortfolioSkeleton page="home" />;
+  }
+
+  return (
+    <div className="portfolio__main pb-16 lg:pb-28 mx-3 lg:mx-0">
+      <AllPortfolio key={1} portfolio={portfolio} />
+      {/* <PortfolioItem
                 title={'Website uiux'}
                 category={'website-uiux'}
                 titleEx={'design'}
@@ -31,7 +43,7 @@ const Portfolio = () => {
                 loader = {loader}
                 >
             </PortfolioItem> */}
-            {/* <PortfolioItem
+      {/* <PortfolioItem
                 title={'Website uiux'}
                 category={'website-uiux'}
                 titleEx={'design'}
@@ -91,8 +103,8 @@ const Portfolio = () => {
                 loader = {loader}
                 >
             </PortfolioItem> */}
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Portfolio;
